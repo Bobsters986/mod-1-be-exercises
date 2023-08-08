@@ -18,4 +18,17 @@ class Activity
   def split
     total_cost / @participants.count
   end
+
+  def owed
+    @participants.transform_values { |paid| split - paid }
+
+    # @participants.each_with_object({}) do |(name, paid), owed|
+    #   owed[name] = split - paid
+    # end
+
+    # @participants.reduce({}) do |owed, (name, paid)|
+    #   owed[name] = split - paid
+    #   owed
+    # end
+  end
 end
