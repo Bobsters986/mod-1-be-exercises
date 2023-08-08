@@ -24,5 +24,10 @@ RSpec.describe Activity do
     activity.add_participant("Maria", 20)
 
     expect(activity.participants).to eq({"Maria" => 20})
+
+    activity.add_participant("Luther", 40)
+
+    expect(activity.participants).to eq({"Maria" => 20, "Luther" => 40})
   end
+
 end
