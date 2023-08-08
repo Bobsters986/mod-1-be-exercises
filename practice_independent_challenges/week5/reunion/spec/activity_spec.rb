@@ -37,4 +37,13 @@ RSpec.describe Activity do
 
     expect(activity.total_cost).to eq(60)
   end
+
+  it 'can split the cost' do
+    activity = Activity.new("Brunch")
+    activity.add_participant("Maria", 20)
+    activity.add_participant("Luther", 40)
+
+    expect(activity.total_cost).to eq(60)
+    expect(activity.split).to eq(30)
+  end
 end
