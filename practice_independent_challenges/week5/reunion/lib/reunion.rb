@@ -17,12 +17,18 @@ class Reunion
 
   def breakout
     breakout = Hash.new(0)
-    
+
     @activities.each do |activity|
       activity.owed.each do |name, owed|
         breakout[name] += owed
       end
     end
     breakout
+  end
+
+  def summary
+    breakout.map do |k, v|
+      "#{k}: #{v}"
+    end.join("\n")
   end
 end
