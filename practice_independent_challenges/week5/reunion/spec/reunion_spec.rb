@@ -13,4 +13,10 @@ RSpec.describe Reunion do
 
     expect(reunion.name).to eq("1406 BE")
   end
+
+  it 'starts with an empty activities array' do
+    reunion = Reunion.new("1406 BE")
+
+    expect(reunion.activities).to eq([])
+  end
 end
